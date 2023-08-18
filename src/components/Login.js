@@ -18,7 +18,7 @@ function Login() {
       password: password
     };
 
-    fetch("http://localhost:3001/login", {
+    fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -42,7 +42,7 @@ function Login() {
   useEffect(() => {
     console.log(`Inside getEmail fetch\nloginSuccess: ${loginSuccess}`);
     console.log(`token: ${localStorage.getItem("token")}`);
-    fetch("http://localhost:3001/getEmail", {
+    fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/getEmail", {
       headers: {
         "x-access-token": localStorage.getItem("token")
       }

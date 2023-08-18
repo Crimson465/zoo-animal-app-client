@@ -10,7 +10,7 @@ function Create() {
     const [image, setImage] = useState('');
 
     useEffect(() => {
-        fetch("http://localhost:3001/getEmail", {
+        fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/getEmail", {
             headers: {
                 "x-access-token": localStorage.getItem("token")
             }
@@ -29,7 +29,7 @@ function Create() {
         const animal = { name, title, description, image };
         console.log(animal);
 
-        const result = axios.post('http://localhost:3001/animals',
+        const result = axios.post('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/animals',
             animal, {
             headers: {
                 "Content-Type": "application/json",

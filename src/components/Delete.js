@@ -10,7 +10,7 @@ function Delete() {
     const [selectedAnimal, setSelectedAnimal] = useState('');
 
     useEffect(() => {
-        fetch("http://localhost:3001/getEmail", {
+        fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/getEmail", {
             headers: {
                 "x-access-token": localStorage.getItem("token")
             }
@@ -25,7 +25,7 @@ function Delete() {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/cards')
+        axios.get('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/cards')
             .then(res => {
                 // console.log('UseEffect being Called...');
                 // console.log('CardList: ', res.data);
@@ -44,7 +44,7 @@ function Delete() {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/animals')
+        axios.get('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/animals')
             .then(res => {
                 // console.log('UseEffect being Called...');
                 // console.log(`res.data: ${res.data}`);
@@ -81,7 +81,7 @@ function Delete() {
             console.log(`random value: ${random_value}`);
             console.log(`new_title: ${new_title}`);
 
-            const uri = `http://localhost:3001/cards/${selectedAnimal}`;
+            const uri = `https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/cards/${selectedAnimal}`;
             const data = { title: new_title };
             console.log(`uri: ${uri}`);
             let result = axios.post(uri,
@@ -95,7 +95,7 @@ function Delete() {
             result.then((data) => { console.log('Printing response data: ', data) });
         }
 
-        const result = axios.post(`http://localhost:3001/delete-animal/${selectedAnimal}`,
+        const result = axios.post(`https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/delete-animal/${selectedAnimal}`,
             {
                 headers: {
                     "Content-Type": "application/json",

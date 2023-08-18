@@ -19,7 +19,7 @@ function Signup() {
     const user = { first_name, last_name, email, password };
     console.log(user);
 
-    const result = axios.post('http://localhost:3001/users',
+    const result = axios.post('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/users',
       user, {
       headers: {
         "Content-Type": "application/json",

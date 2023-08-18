@@ -9,7 +9,7 @@ function FullList() {
     const [animals, setAnimals] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3001/getEmail", {
+        fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/getEmail", {
             headers: {
                 "x-access-token": localStorage.getItem("token")
             }
@@ -24,7 +24,7 @@ function FullList() {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/animals')
+        axios.get('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/animals')
             .then(res => {
                 // console.log('UseEffect being Called...');
                 console.log(`res.data: ${res.data}`);

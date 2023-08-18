@@ -15,7 +15,7 @@ function Home() {
   const [animal3, setAnimal3] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/getEmail", {
+    fetch("https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/getEmail", {
       headers: {
         "x-access-token": localStorage.getItem("token")
       }
@@ -30,7 +30,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/cards')
+    axios.get('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/cards')
       .then(res => {
         // console.log('UseEffect being Called...');
         // console.log('CardList: ', res.data);
@@ -49,7 +49,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/animals')
+    axios.get('https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/animals')
       .then(res => {
         // console.log('UseEffect being Called...');
         // console.log(res.data);
@@ -85,7 +85,7 @@ function Home() {
   }, [animals, cardList]);
 
   const updateCardList = (oldTitle, newTitle) => {
-    const uri = `http://localhost:3001/cards/${oldTitle}`;
+    const uri = `https://zoo-animal-app-server-c8db59be6c82.herokuapp.com/cards/${oldTitle}`;
     const data = { title: newTitle };
     console.log(`uri: ${uri}`);
     let result = axios.post(uri,
